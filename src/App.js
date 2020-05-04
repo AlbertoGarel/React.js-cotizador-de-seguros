@@ -1,11 +1,8 @@
 import React, { Fragment } from "react";
+import Header from "./components/Header";
 
 function App() {
-  return (
-    <Fragment>
-      <div>12</div>
-    </Fragment>
-  );
+  return <Header titulo="Cotizador de seguros"/>;
 }
 
 export default App;
