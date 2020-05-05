@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { obtenerDiferenciaAnio, calculaMarca, obtenerPlan } from "../helper";
+import PtopTypes from "prop-types";
 
 const Campo = styled.div`
     display: flex;
@@ -101,7 +102,7 @@ const Formulario = ({ guardarResumen, guardarCargando }) => {
 
             //to principal Component
             guardarResumen({
-                cotizacion: resultado,
+                cotizacion: Number(resultado),
                 datos
             });
         }, 2000);
@@ -166,6 +167,11 @@ const Formulario = ({ guardarResumen, guardarCargando }) => {
             <Boton type="submit"> Cotizar </Boton>{" "}
         </form>
     );
+};
+
+Formulario.propTypes = {
+    guardarResumen: PtopTypes.func.isRequired,
+    guardarCargando: PtopTypes.func.isRequired
 };
 
 export default Formulario;
