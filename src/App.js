@@ -16,12 +16,14 @@ const ContenedorFormulario = styled.div`
 
 function App() {
     const [resumen, guardarResumen] = useState({});
+    const { datos } = resumen;
+
     return (
         <Contenedor>
             <Header titulo="Cotizador de seguros" />
             <ContenedorFormulario>
                 <Formulario guardarResumen={guardarResumen} />
-                <Resumen />
+                {datos ? <Resumen datos={datos} /> : null}
             </ContenedorFormulario>
         </Contenedor>
     );
